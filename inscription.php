@@ -49,10 +49,11 @@ require_once "header.php";
                             <input type="submit" name="inscription" value="Inscription" class="btn btn-search" />
                         </div>
                     </div>
-                    <small class="invalid-feedback"><?= @$formErrors['invalidMDP'] ?></small>
-                    <small class="invalid-feedback"><?= @$formErrors['mailExist'] ?></small>
                 </form>
             </fieldset>
+            <div><?= @$formErrors['invalidMDP'] ?></div>
+            <div><?= @$formErrors['mailExist'] ?></div>
+
         </div>
     </div>
 </div>

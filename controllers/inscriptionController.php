@@ -57,9 +57,7 @@ if ($thisMailExist->count == 0) {
    $newUser = $user->addInscription();
 } else {
    // sinon j'affiche un message d'erreur.
-   $formErrors['mailExist'] = 'Un compte avec cette adresse mail existe déjà !';
+   $formErrors['mailExist'] = EXIST_MAIL;
 }
-var_dump($_POST);
-var_dump($user);
 }
 
