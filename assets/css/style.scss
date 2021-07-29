@@ -1,0 +1,78 @@
+$bg-color:#344a62;
+$color1:white;
+$color2:#344a62;
+$hover-color: orangered;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Xanh Mono", monospace;
+}
+
+header,
+footer {
+    height: 15vh;
+    background-color: $bg-color;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $color1;
+}
+
+h2 {
+    color: $color2;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: $color1;
+    &:hover {
+        color: $hover-color;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+u {
+    color: $color1;
+}
+
+nav,
+.nav-item {
+    background-color: $bg-color;
+    a {
+        color: $color1;
+        text-decoration: none;
+        font-size: 1.5rem;
+        &:hover {
+            color: $hover-color;
+        }
+    }
+}
+
+.btn-search {
+    border: 1px solid white;
+    color: $color1;
+    background-color: $bg-color;
+    &:hover {
+        color: $hover-color;
+        border: 1px solid $hover-color;
+    }
+}
+
+.navbar-toggler {
+    color: $color1;
+}
+
+.bi {
+    color: $color1;
+}
+
+.link,
+legend u {
+    color: $color2;
+}
