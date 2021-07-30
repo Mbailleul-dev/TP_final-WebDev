@@ -1,4 +1,6 @@
 <?php
+session_start();
+ 
 require_once "config.php";
 require_once "database.php";
 require_once "models/userModel.php";
@@ -31,9 +33,9 @@ require_once "header.php";
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group <?= !isset($formErrors['password']) ?: 'has-danger' ?>">
+                        <div class="form-group <?= !isset($formErrors['password2']) ?: 'has-danger' ?>">
                             <label for="password2" class="form-label">Confirmer le mot de passe <span class="text-danger">*:</span></label>
-                            <input type="password" name="password2" id="password2" placeholder="ex: mDp\132" class="form-control <?= isset($formErrors['password']) ? 'is-invalid' : '' ?>" />
+                            <input type="password" name="password2" id="password2" placeholder="ex: mDp\132" class="form-control <?= isset($formErrors['password2']) ? 'is-invalid' : '' ?>" />
                             <small class="invalid-feedback"><?= @$formErrors['password'] ?></small>
                         </div>
                     </div>

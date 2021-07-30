@@ -1,7 +1,16 @@
+<?php
+session_start();
+ 
+require_once "database.php";
+require_once "config.php";
+require_once "models/userModel.php";
+require_once "controllers/connexionController.php";
+?>
 
 <?php
 require_once "header.php";
 ?>
+
 
 <div class="container text-center">
     <div class="row mt-5">
@@ -9,18 +18,18 @@ require_once "header.php";
         <div class="col-md-6">
             <fieldset>
                 <legend><u>Connexion</u></legend>
-                <form action="index.php" method="POST" enctype="multipart/form-data">
+                <form action="#" method="POST" enctype="multipart/form-data">
                     <div class="row">
-                        <div class="form-group <?= !isset($formErrors['Pseudo']) ?: 'has-danger' ?>">
-                            <label for="Pseudo" class="form-label">Nom d'utilisateur <span class="text-danger">*:</span></label>
-                            <input type="text" name="Pseudo" id="Pseudo" placeholder="ex: Pseudo123" class="form-control <?= isset($formErrors['Pseudo']) ? 'is-invalid' : '' ?>" />
-                            <small class="invalid-feedback"><?= @$formErrors['Pseudo'] ?></small>
+                        <div class="form-group <?= !isset($formErrors['login']) ?: 'has-danger' ?>">
+                            <label for="login" class="form-label">Nom d'utilisateur <span class="text-danger">*:</span></label>
+                            <input type="text" name="login" id="login" value="<?= @$_POST['login'] ?>" placeholder="ex: login123" class="form-control <?= isset($formErrors['login']) ? 'is-invalid' : '' ?>" />
+                            <small class="invalid-feedback"><?= @$formErrors['login'] ?></small>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group <?= !isset($formErrors['password']) ?: 'has-danger' ?>">
                             <label for="password" class="form-label">Mot de passe <span class="text-danger">*:</span></label>
-                            <input type="password" name="password" id="password" placeholder="ex: mDp\132" class="form-control <?= isset($formErrors['password']) ? 'is-invalid' : '' ?>" />
+                            <input type="password" name="password" id="password" value="<?= @$_POST['password'] ?> placeholder="ex: mDp\132" class="form-control <?= isset($formErrors['password']) ? 'is-invalid' : '' ?>" />
                             <small class="invalid-feedback"><?= @$formErrors['password'] ?></small>
                         </div>
                     </div>

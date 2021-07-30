@@ -50,12 +50,12 @@ if (count($_POST) > 0) {
       }
    }
    //Je vérifie l'existence de l'adresse email dans userModel.php
-$thisMailExist = $user->verifyIfMailExist();
+$thisMailExists = $user->verifyIfMailExists();
 
-if ($thisMailExist->count == 0) {
+if ($thisMailExists->count == 0) {
    // je crée un utilisateur
    $newUser = $user->addInscription();
-} else {
+} else if ($thisMailExists->count > 0) {
    // sinon j'affiche un message d'erreur.
    $formErrors['mailExist'] = EXIST_MAIL;
 }

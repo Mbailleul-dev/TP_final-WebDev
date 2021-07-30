@@ -10,3 +10,4 @@ define('EXIST_MAIL', 'Un compte possède déjà cette adresse e-mail.');
 define('EMPTY_PASSWORD', 'Le mot de passe est obligatoire');
 define('EMPTY_PASSWORD2', 'La confirmation du mot de passe est obligatoire');
 define('INVALID_PASSWORD', 'Les mots de passes sont différents !');
+define('INVALID_USER', 'Cet identifiant n\'existe pas.');
