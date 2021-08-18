@@ -20,6 +20,10 @@ h1 {
     color: $color1;
 }
 
+.home {
+    min-height: 61vh;
+}
+
 h2 {
     color: $color2;
     text-decoration: underline;
@@ -44,6 +48,7 @@ u {
 nav,
 .nav-item {
     background-color: $bg-color;
+    display: flex;
     a {
         color: $color1;
         text-decoration: none;
@@ -75,4 +80,14 @@ nav,
 .link,
 legend u {
     color: $color2;
+}
+
+.name {
+    color: $color1;
+    font-size: 1.5rem;
+    margin-top: 8px;
+}
+
+.text {
+    text-indent: 2rem;
 }

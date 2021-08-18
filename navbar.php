@@ -21,12 +21,22 @@
           <a class="nav-link" href="#">Pricing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="connexion.php"><img src="assets/img/log-in.svg" alt="logo log-in"></a>
+        <?php if (!empty($_SESSION['login']))
+        { ?>
+          <span class="name"><?= @$_SESSION['login']; ?></span>
+          <a class="nav-link" href="deconnexion.php"><img src="assets/img/log-out.svg" alt="logo log-out" title="se deconnecter"> </a>
+        <?php } else { ?><a class="nav-link" href="connexion.php"><img src="assets/img/log-in.svg" alt="logo log-in" title="se connecter"></a>
+         <?php } ?>
         </li>
       </ul>
       <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-search" type="submit">Search</button>
+      <?php if (isset($_SESSION['id_userTypes']) && $_SESSION['id_userTypes'] == 1)
+        { ?>
+        <a class="nav-item" href="dashboard.php">Gestion</a>
+        <?php } else { ?>
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+<button class="btn btn-search" type="submit">Search</button>
+        <?php } ?>
     </form>
     </div>
   </div>

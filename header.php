@@ -20,6 +20,7 @@
         </div>
     </div>
     </div>
+    
 </header>
 
 <?php require_once "navbar.php"; ?>

@@ -1,6 +1,6 @@
 <?php
 
-$regex = ['login' => '/[a-zA-Z0-9]/'];
+$regex = ['login' => '/^[a-zA-Z0-9]+$/'];
 // Permet de créer une constante PHP ('NOM', 'Valeur')
 define('EMPTY_LOGIN', 'Le pseudo est obligatoire');
 define('INVALID_LOGIN', 'Le pseudo est invalide ! Il doit contenir uniquement des lettres et des chiffres.');

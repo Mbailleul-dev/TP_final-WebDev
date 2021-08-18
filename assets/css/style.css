@@ -16,6 +16,10 @@ h1 {
   color: white;
 }
 
+.home {
+  min-height: 61vh;
+}
+
 h2 {
   color: #344a62;
   text-decoration: underline;
@@ -40,6 +44,7 @@ u {
 nav,
 .nav-item {
   background-color: #344a62;
+  display: flex;
 }
 nav a,
 .nav-item a {
@@ -73,4 +78,14 @@ nav a:hover,
 .link,
 legend u {
   color: #344a62;
+}
+
+.name {
+  color: white;
+  font-size: 1.5rem;
+  margin-top: 8px;
+}
+
+.text {
+  text-indent: 2rem;
 }/*# sourceMappingURL=style.css.map */

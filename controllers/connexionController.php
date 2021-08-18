@@ -42,16 +42,14 @@ if (count($_POST) > 0) {
 
 
    if (count($formErrors) == 0) {
-      // 
 
       $connectUser = $user->userConnexion();
       $_SESSION['id'] = $connectUser->id;
       $_SESSION['login'] = $user->login;
       $_SESSION['mail'] = $connectUser->mail;
       $_SESSION['id_userTypes'] = $connectUser->id_userTypes;
-     
-   } else if ($thisUserExists->count == 0) {
-      // sinon j'affiche un message d'erreur.
-      $formErrors['userNotExist'] = INVALID_USER;
+      header('location:index.php');
+      exit;
    }
-}
+   
+   }

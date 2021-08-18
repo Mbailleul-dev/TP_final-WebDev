@@ -55,6 +55,8 @@ $thisMailExists = $user->verifyIfMailExists();
 if ($thisMailExists->count == 0) {
    // je crée un utilisateur
    $newUser = $user->addInscription();
+   header('location:connexion.php');
+   exit;
 } else if ($thisMailExists->count > 0) {
    // sinon j'affiche un message d'erreur.
    $formErrors['mailExist'] = EXIST_MAIL;
