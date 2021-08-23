@@ -16,10 +16,6 @@ h1 {
   color: white;
 }
 
-.home {
-  min-height: 61vh;
-}
-
 h2 {
   color: #344a62;
   text-decoration: underline;
@@ -88,4 +84,18 @@ legend u {
 
 .text {
   text-indent: 2rem;
+}
+
+.searchform {
+  height: 2.5rem;
+}
+
+#profilImg {
+  max-height: 10rem;
+  width: auto;
+  float: left;
+}
+
+h4 {
+  font-size: 2rem;
 }/*# sourceMappingURL=style.css.map */

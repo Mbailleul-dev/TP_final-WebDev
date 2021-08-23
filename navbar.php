@@ -6,37 +6,28 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="articles.php">Articles</a>
+          <a class="nav-link" href="http://localhost/DMGP/articles/articles.php">Articles</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Lectures</a>
+          <a class="nav-link" href="http://localhost/DMGP/books/books.php">Lectures</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="http://localhost/DMGP/etfs/etf.php">ETFs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="http://localhost/DMGP/forum/forum.php">Forum</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
+          <a class="nav-link" href="<?php if (!empty($_SESSION['login']))
+          { ?>http://localhost/DMGP/profils/profil.php<?php }
+          else { ?>http://localhost/DMGP/profils/connexion.php <?php }
+          ?>"><?php if (!empty($_SESSION['login'])) { ?>
+          Profil <?php } else { ?> Connexion <?php } ?></a>
         </li>
         <li class="nav-item">
-        <?php if (!empty($_SESSION['login']))
-        { ?>
-          <span class="name"><?= @$_SESSION['login']; ?></span>
-          <a class="nav-link" href="deconnexion.php"><img src="assets/img/log-out.svg" alt="logo log-out" title="se deconnecter"> </a>
-        <?php } else { ?><a class="nav-link" href="connexion.php"><img src="assets/img/log-in.svg" alt="logo log-in" title="se connecter"></a>
-         <?php } ?>
-        </li>
-      </ul>
-      <form class="d-flex">
-      <?php if (isset($_SESSION['id_userTypes']) && $_SESSION['id_userTypes'] == 1)
-        { ?>
-        <a class="nav-item" href="dashboard.php">Gestion</a>
-        <?php } else { ?>
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-<button class="btn btn-search" type="submit">Search</button>
-        <?php } ?>
+        
+          <input class="form-control me-2 mt-1 searchform" type="search" placeholder="Recherche" aria-label="Search">
+<button class="btn btn-search searchform mt-1" type="submit">Chercher</button>
     </form>
     </div>
   </div>

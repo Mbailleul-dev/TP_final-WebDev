@@ -36,4 +36,14 @@ class article extends database
         $getListResult = $getListExecute->fetchAll(PDO::FETCH_OBJ); //fetchAll est une methode de l'objet "queryExecute"
         return $getListResult;
     }
+
+    public function deleteArticle()
+    {
+
+    }
+
+    public function modifyArticle()
+    {
+        
+    }
 }

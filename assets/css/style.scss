@@ -20,10 +20,6 @@ h1 {
     color: $color1;
 }
 
-.home {
-    min-height: 61vh;
-}
-
 h2 {
     color: $color2;
     text-decoration: underline;
@@ -90,4 +86,19 @@ legend u {
 
 .text {
     text-indent: 2rem;
+}
+
+.searchform {
+    height: 2.5rem;
+}
+
+#profilImg {
+    max-height: 10rem;
+    width: auto;
+    float: left;
+}
+
+h4 {
+    font-size: 2rem;
+    ;
 }

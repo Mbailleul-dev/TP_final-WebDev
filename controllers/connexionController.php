@@ -11,7 +11,7 @@ if (count($_POST) > 0) {
          // filtre les chars pour eviter les injections SQL (ex: < >)
          $user->login = htmlspecialchars($_POST['login']);
 
-         $thisUserExists = $user->verifyIfUserExists();
+         $thisUserExists = $user->checkIfUserExists();
          if ($thisUserExists->count == 0) {
             $formError['login'] = 'L\'identifiant ou le mdp est incorrect';
          }
@@ -22,24 +22,16 @@ if (count($_POST) > 0) {
       $formErrors['login'] = EMPTY_LOGIN;
    }
 
-
-
    if (!empty($_POST['password'])) {
       if (!isset($formErrors['login'])) {
          $hash = $user->getHash();
-         
          if (!password_verify($_POST['password'], $hash->password)) {
-            //    $user->password = $_POST['password'];
-            // }
-            // else {
             $formErrors['password'] = 'L\'identifiant ou le mdp est incorrect';
          }
       }
    } else {
       $formErrors['paswword'] = EMPTY_PASSWORD;
    }
-   
-
 
    if (count($formErrors) == 0) {
 
@@ -47,9 +39,10 @@ if (count($_POST) > 0) {
       $_SESSION['id'] = $connectUser->id;
       $_SESSION['login'] = $user->login;
       $_SESSION['mail'] = $connectUser->mail;
+      $_SESSION['avatar'] = $user->avatar;
       $_SESSION['id_userTypes'] = $connectUser->id_userTypes;
-      header('location:index.php');
+      
+      header('location:profil.php');
       exit;
    }
-   
-   }
+}

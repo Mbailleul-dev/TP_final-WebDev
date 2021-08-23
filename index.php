@@ -2,15 +2,16 @@
 session_start();
 
 require_once "header.php";
+require_once "navbar.php";
 ?>
-<div class="container home">
-    <div class="row">
-        <div class="col">
+<div class="container">
+    <div class="row mt-4">
+        <div class="col offset-1">
             <h2>Présentation</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
+        <div class="col-9 offset-1">
             <p>
                 Quand tu fais le calcul, ce n'est pas un simple sport car entre penser et dire, il y a un monde de différence et c'est une sensation réelle qui se produit si on veut ! C'est pour ça que j'ai fait des films avec des replicants.
 
