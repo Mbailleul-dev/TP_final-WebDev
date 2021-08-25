@@ -15,7 +15,6 @@
                             <input type="text" class="form-control" name="title" value="<?= @$_POST['title']; ?>" id="title">
                         </div>
                     </div>
-
                     <div class="col-md-2">
                         <div class="form-group">
                             <label for="release">Date de parution:</label>
@@ -24,14 +23,12 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="form-group">
                         <label for="resume">Résumé:</label>
                         <textarea class="form-control" name="resume" value="<?= @$_POST['resume']; ?>" id="resume" rows="3"></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-search">Ajouter le livre.</button>
-
+                <button type="submit" class="btn btn-search">Ajouter ce livre</button>
             </form>
         </fieldset>
         <small><?= $error ?></small>

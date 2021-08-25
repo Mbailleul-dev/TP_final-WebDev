@@ -37,13 +37,23 @@ class article extends database
         return $getListResult;
     }
 
-    public function deleteArticle()
+    public function updateArticle()
     {
-
+        $updateArticle = $this->db->prepare('UPDATE shd113_articles 
+        SET `title`=:ModalLabel, `text`=:ModalBody, `id_users`=:id_users
+        WHERE `id`=:newId');
+        $updateArticle->bindValue(':newId', $this->id, PDO::PARAM_INT);
+        $updateArticle->bindValue(':ModalLabel', $this->title, PDO::PARAM_STR);
+        $updateArticle->bindValue(':ModalBody', $this->text, PDO::PARAM_STR);
+        $updateArticle->bindValue(':id_users', $this->id_users, PDO::PARAM_INT);
+        return $updateArticle->execute();
     }
 
-    public function modifyArticle()
+    public function deleteArticle()
     {
-        
+        $deleteArticle = $this->db->prepare('DELETE FROM shd113_articles
+        WHERE `title`=:deleteSelect');
+        $deleteArticle->bindValue(':deleteSelect', $this->title, PDO::PARAM_STR);
+        return $deleteArticle->execute();
     }
 }

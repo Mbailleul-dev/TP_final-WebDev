@@ -6,7 +6,7 @@ body {
 
 header,
 footer {
-  height: 15vh;
+  height: 20vh;
   background-color: #344a62;
 }
 
@@ -63,6 +63,16 @@ nav a:hover,
   border: 1px solid orangered;
 }
 
+.btn-inverse {
+  border: 1px solid #344a62;
+  color: #344a62;
+  background-color: white;
+}
+.btn-inverse:hover {
+  color: orangered;
+  border: 1px solid orangered;
+}
+
 .navbar-toggler {
   color: white;
 }
@@ -98,4 +108,8 @@ legend u {
 
 h4 {
   font-size: 2rem;
+}
+
+.bi {
+  font-size: 1.5rem;
 }/*# sourceMappingURL=style.css.map */

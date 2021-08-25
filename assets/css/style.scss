@@ -2,6 +2,7 @@ $bg-color:#344a62;
 $color1:white;
 $color2:#344a62;
 $hover-color: orangered;
+$alert: rgb(161, 15, 15);
 body {
     margin: 0;
     padding: 0;
@@ -10,7 +11,7 @@ body {
 
 header,
 footer {
-    height: 15vh;
+    height: 20vh;
     background-color: $bg-color;
 }
 
@@ -56,9 +57,19 @@ nav,
 }
 
 .btn-search {
-    border: 1px solid white;
+    border: 1px solid $color1;
     color: $color1;
     background-color: $bg-color;
+    &:hover {
+        color: $hover-color;
+        border: 1px solid $hover-color;
+    }
+}
+
+.btn-inverse {
+    border: 1px solid $color2;
+    color: $color2;
+    background-color: $color1;
     &:hover {
         color: $hover-color;
         border: 1px solid $hover-color;
@@ -101,4 +112,8 @@ legend u {
 h4 {
     font-size: 2rem;
     ;
+}
+
+.bi {
+    font-size: 1.5rem;
 }

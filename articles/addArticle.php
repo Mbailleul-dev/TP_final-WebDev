@@ -15,7 +15,6 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-search">Envoyer le nouvel article</button>
-                
             </form>
         </fieldset>
         <small><?= $error ?></small>

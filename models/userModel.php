@@ -77,8 +77,8 @@ class user extends database
     //méthode pour ajouter une photo de profil
     public function addAvatar()
     {
-        $avatar = $this->db->prepare('UPDATE shd113_users SET avatar = :avatar 
-        WHERE id = :id');
+        $avatar = $this->db->prepare('UPDATE shd113_users SET `avatar` = :avatar 
+        WHERE `id` = :id');
         $avatar->bindValue('id', $this->id, PDO::PARAM_INT);
         $avatar->bindValue('avatar', $this->id, PDO::PARAM_STR);
         return $avatar->execute();
