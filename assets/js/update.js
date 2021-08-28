@@ -11,17 +11,3 @@ Modal.addEventListener('show.bs.modal', function() {
     document.getElementById('ModalLabel').value = title;
     document.getElementById('ModalBody').value = content;
 })
-
-///////////////////////////////////
-var bookModal = document.getElementById('updateBook');
-
-bookModal.addEventListener('show.bs.modal', function() {
-    let bookId = document.getElementById('updateBookSelect').value;
-
-    let bookTitle = bookId.getAttribute('book-title');
-    let bookResume = bookId.getAttribute('book-resume');
-    document.getElementById('bookId').value = bookId;
-    document.getElementById('updateBookTitle').value = bookTitle;
-    document.getElementById('updateBookResume').value = bookResume;
-
-})

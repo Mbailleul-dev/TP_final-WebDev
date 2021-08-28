@@ -16,7 +16,7 @@
     <div class="container-fluid">
     <div class="row text-center">
         <div class="col">
-            <a href="index.php"><h1 class="mt-5">Dépenser moins, gagner plus.</h1></a>
+            <a href="http://localhost/DMGP/index.php"><h1 class="mt-5">Dépenser moins, gagner plus.</h1></a>
         </div>
     </div>
     </div>

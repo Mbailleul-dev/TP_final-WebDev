@@ -31,7 +31,7 @@ class article extends database
         $getList = 'SELECT shd113_articles.id as ref,`title`,`release`,`text`,`id_users`,`login`
         FROM shd113_articles
         INNER JOIN shd113_users ON shd113_articles.id_users = shd113_users.id
-        ORDER BY `release` DESC';
+        ORDER BY `release` DESC LIMIT 0,3';
         $getListExecute = $this->db->query($getList);
         $getListResult = $getListExecute->fetchAll(PDO::FETCH_OBJ); //fetchAll est une methode de l'objet "queryExecute"
         return $getListResult;

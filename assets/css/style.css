@@ -112,4 +112,21 @@ h4 {
 
 .bi {
   font-size: 1.5rem;
+}
+
+#bookTitle,
+#bookAuthor,
+#newBookTitle,
+#newBookAuthor {
+  min-width: 25vw;
+}
+
+#bookRelease,
+#newBookRelease {
+  min-width: 5vw;
+}
+
+#bookResume,
+#newBookResume {
+  min-width: 60vw;
 }/*# sourceMappingURL=style.css.map */

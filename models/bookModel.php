@@ -32,25 +32,38 @@ class book extends database
         $addBook->bindValue(':title', $this->title, PDO::PARAM_STR);
         $addBook->bindValue(':resume', $this->resume, PDO::PARAM_STR);
         $addBook->bindValue(':release', $this->release, PDO::PARAM_INT);
-        $addBook->execute();
+        return $addBook->execute();
+    }
+
+    public function getBook()
+    {
+        $getBook = $this->db->prepare('SELECT `id`, `author`,`title`,`release`,`resume`
+        FROM shd113_books
+        WHERE `id`=:bookFormControlSelect');
+        $getBook->bindValue(':bookFormControlSelect', $this->id, PDO::PARAM_INT);
+        $getBook->execute();
+        $getBookResult = $getBook->fetch(PDO::FETCH_OBJ);
+        return $getBookResult;
     }
 
     public function updateBook()
     {
         $updateBook = $this->db->prepare('UPDATE shd113_Books 
-        SET `title`=:updateBookTitle, `resume`=:updateBookResume
+        SET `author`=:bookAuthor, `title`=:bookTitle, `release`=:bookRelease,`resume`=:bookResume
         WHERE `id`=:bookId');
         $updateBook->bindValue(':bookId', $this->id, PDO::PARAM_INT);
-        $updateBook->bindValue(':updateBookTitle', $this->title, PDO::PARAM_STR);
-        $updateBook->bindValue(':updateBookResume', $this->text, PDO::PARAM_STR);
+        $updateBook->bindValue(':bookAuthor', $this->author, PDO::PARAM_STR);
+        $updateBook->bindValue(':bookTitle', $this->title, PDO::PARAM_STR);
+        $updateBook->bindValue(':bookRelease', $this->release, PDO::PARAM_INT);
+        $updateBook->bindValue(':bookResume', $this->resume, PDO::PARAM_STR);
         return $updateBook->execute();
     }
 
-    // public function deleteBook()
-    // {
-    //     $deleteBook = $this->db->prepare('DELETE FROM shd113_Books
-    //     WHERE `title`=:deleteSelect');
-    //     $deleteBook->bindValue(':deleteSelect', $this->title, PDO::PARAM_STR);
-    //     return $deleteBook->execute();
-    // }
+    public function deleteBook()
+    {
+        $deleteBook = $this->db->prepare('DELETE FROM shd113_Books
+        WHERE `title`=:deleteSelect');
+        $deleteBook->bindValue(':deleteSelect', $this->title, PDO::PARAM_STR);
+        return $deleteBook->execute();
+    }
 }
