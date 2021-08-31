@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 require_once "../models/database.php";
 require_once "../pages/config.php";
 require_once "../models/userModel.php";
@@ -18,8 +17,9 @@ require_once "../navbar.php";
     <div class="row mt-4">
         <div class="col-2 offset-2">
             <img id="profilImg" src="<?php
-            if (!empty($_SESSION['avatar'])){ echo '../assets/img/userMedias/'.$_SESSION['avatar']; }
-            else { ?>../assets/img/defaultProfil.svg <?php } ?>" alt="photo de profil">
+                                        if (!empty($_SESSION['avatar'])) {
+                                            echo $_SESSION['avatar'];
+                                        } else { ?>../assets/img/defaultProfil.svg <?php } ?>" alt="photo de profil">
         </div>
         <div class="col">
             <h4 class="">Bonjour <?= @$_SESSION['login'] ?> !</h4>
@@ -35,18 +35,18 @@ require_once "../navbar.php";
             </div>
             <div class="row mt-2">
                 <div class="col-md-6">
-                    <form action="profil.php" method="POST" enctype="multipart/form-data">
-                        <label for="avatar">Changer mon avatar:</label>
-                        <input type="file" id="avatar" name="file" class="form-control" placeholder="choisir un fichier">
-                        <button type="submit" class="btn btn-search">Enregistrer</button>
-                    </form>
+                    <button type="button" class="btn btn-search" data-bs-toggle="modal" data-bs-target="#updateModal"><a href="#">Modifier mon profil</a></button>
+                    <?php require_once "updateProfil.php"; ?>
+                    <button type="button" class="btn btn-search" data-bs-toggle="modal" data-bs-target="#deleteModal">Supprimer mon compte</button>
+                    <?php require_once "deleteProfil.php"; ?>
                 </div>
             </div>
-        </div>
-        <div class="row mt-3">
-
-            <button type="submit" class="btn btn-search"><a href="sendMail.php">Réinitialiser le mdp</a></button>
-            <button type="button" class="btn btn-search"><a href="deconnexion.php">Deconnexion</a></button>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-search"><a href="sendMail.php">Réinitialiser le mdp</a></button>
+                    <button type="button" class="btn btn-search"><a href="deconnexion.php">Deconnexion</a></button>
+                </div>
+            </div>
         </div>
     </div>
     </form>

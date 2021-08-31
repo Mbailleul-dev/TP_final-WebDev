@@ -1,7 +1,13 @@
+let choice1 = document.getElementById('etfChoice1');
+
+choice1.addEventListener('select', function() {
+    let etf1 = document.getElementById('etfChoice1').value;
+})
+
 $(function() {
 
     $.get({
-        url: 'http://api.marketstack.com/v1/tickers/EDV/eod',
+        url: 'http://api.marketstack.com/v1/Tickers/EDV/eod',
         data: {
             access_key: '1264cdd4f7dcfa790d7b2f226608330b'
         },

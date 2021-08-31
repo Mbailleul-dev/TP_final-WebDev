@@ -9,6 +9,7 @@ class user extends database
     public $login = ' ';
     public $password = ' ';
     public $mail = ' ';
+    public $avatar = null;
     public $id_userTypes = 0;
 
     /** La fonction magique __construct se lance automatiquement à l'appel de la classe
@@ -74,13 +75,22 @@ class user extends database
         return $userConnectsResult;
     }
 
-    //méthode pour ajouter une photo de profil
-    public function addAvatar()
+    public function updateUser()
     {
-        $avatar = $this->db->prepare('UPDATE shd113_users SET `avatar` = :avatar 
+        $user = $this->db->prepare('UPDATE shd113_users SET `login` = :updateLogin, `mail` = :updateMail, `avatar` = :avatar 
         WHERE `id` = :id');
-        $avatar->bindValue('id', $this->id, PDO::PARAM_INT);
-        $avatar->bindValue('avatar', $this->id, PDO::PARAM_STR);
-        return $avatar->execute();
+        $user->bindValue('id', $this->id, PDO::PARAM_INT);
+        $user->bindValue(':updateLogin', $this->login, PDO::PARAM_STR);
+        $user->bindValue(':updateMail', $this->mail, PDO::PARAM_STR);
+        $user->bindValue(':avatar', $this->avatar, PDO::PARAM_STR);
+        return $user->execute();
+    }
+
+    public function deleteUser()
+    {
+        $deleteUser = $this->db->prepare('DELETE FROM shd113_users 
+        WHERE `login`=:deleteProfil');
+        $deleteUser->bindValue('deleteProfil', $this->login, PDO::PARAM_STR);
+        return $deleteUser->execute();
     }
 }
