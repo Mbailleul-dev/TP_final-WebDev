@@ -1,24 +1,71 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Xanh Mono", monospace;
-}
-
-header,
-footer {
-  height: 20vh;
-  background-color: #344a62;
-}
-
-h1 {
-  text-transform: uppercase;
-  font-weight: bold;
+  font-family: "Kaisei Decol", serif;
+  background-image: url("../img/F7.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   color: white;
 }
 
+.header1 {
+  min-height: 98vh;
+}
+
+footer {
+  height: 20vh;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.title1 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  font-size: 4.1rem;
+}
+
+.title2 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  font-size: 2rem;
+}
+
+.title-size {
+  min-height: 50vh;
+  margin-top: 30vh;
+}
+
+.bi-arrow-down {
+  color: white;
+  border: 2px solid white;
+  border-radius: 20%;
+  font-size: 2rem;
+  transition: font-size 0.3s linear;
+}
+.bi-arrow-down:hover {
+  color: #76e9ed;
+  border: 3px solid #76e9ed;
+  font-size: 2rem;
+}
+
+.introduction {
+  min-height: 60vh;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 h2 {
-  color: #344a62;
-  text-decoration: underline;
+  color: white;
+  text-decoration: none;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+p,
+.btn {
+  font-size: 1.2rem;
 }
 
 a {
@@ -26,20 +73,23 @@ a {
   color: white;
 }
 a:hover {
-  color: orangered;
+  color: #76e9ed;
 }
 
 ul {
   list-style-type: none;
 }
 
-u {
-  color: white;
+.navbar1 {
+  margin-left: 45vw;
+}
+
+.toggler1 {
+  margin-left: 35vw;
 }
 
 nav,
 .nav-item {
-  background-color: #344a62;
   display: flex;
 }
 nav a,
@@ -49,18 +99,21 @@ nav a,
   font-size: 1.5rem;
 }
 nav a:hover,
-.nav-item a:hover {
-  color: orangered;
+nav a :focus,
+.nav-item a:hover,
+.nav-item a :focus {
+  color: #76e9ed;
+  border-bottom: 1px solid #76e9ed;
 }
 
 .btn-search {
   border: 1px solid white;
   color: white;
-  background-color: #344a62;
+  background-color: rgba(0, 0, 255, 0.3);
 }
 .btn-search:hover {
-  color: orangered;
-  border: 1px solid orangered;
+  color: #76e9ed;
+  border: 1px solid #76e9ed;
 }
 
 .btn-inverse {
@@ -69,21 +122,63 @@ nav a:hover,
   background-color: white;
 }
 .btn-inverse:hover {
-  color: orangered;
-  border: 1px solid orangered;
+  color: #76e9ed;
+  border: 1px solid #76e9ed;
 }
 
 .navbar-toggler {
   color: white;
 }
 
+.footer-link {
+  font-size: 1.4rem;
+}
+
+.connexion,
+.inscription {
+  min-height: 55vh;
+}
+
+.profil {
+  min-height: 47vh;
+  margin-top: 15vh;
+}
+
+.btn-size {
+  min-width: 10vw;
+}
+
+label {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content,
+.accordion-header,
+.accordion-body,
+.accordion-button {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+
+.form-group,
+.btn {
+  margin-top: 1.5vh;
+}
+
+.card-body {
+  color: black;
+}
+
 .bi {
   color: white;
 }
 
-.link,
-legend u {
-  color: #344a62;
+legend {
+  font-size: 2rem;
+}
+
+label {
+  font-size: 1.5rem;
 }
 
 .name {
@@ -129,4 +224,22 @@ h4 {
 #bookResume,
 #newBookResume {
   min-width: 60vw;
+}
+
+.comments {
+  border: 2px solid black;
+}
+
+.btn-style {
+  background-color: rgba(0, 0, 128, 0.85);
+  color: white;
+}
+.btn-style:hover {
+  color: #76e9ed;
+  border: 3px 3px 3px #76e9ed;
+}
+
+.canvas {
+  width: 50vw;
+  height: 50vh;
 }/*# sourceMappingURL=style.css.map */

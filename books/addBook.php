@@ -3,7 +3,7 @@
         <fieldset>
             <form action="#" method="POST">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="author">Auteur:</label>
                             <input type="text" class="form-control" name="author" value="<?= @$_POST['author']; ?>" id="author">
@@ -15,7 +15,7 @@
                             <input type="text" class="form-control" name="title" value="<?= @$_POST['title']; ?>" id="title">
                         </div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-3">
                         <div class="form-group">
                             <label for="release">Date de parution:</label>
                             <input type="number" class="form-control" name="release" value="<?= @$_POST['release']; ?>" id="release">

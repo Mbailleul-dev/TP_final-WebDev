@@ -12,11 +12,11 @@
             Supprimer cet article
         </button>
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade mt-5" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-body">
-                        Êtes vous certain ?
+                        <p>Êtes vous certain ?</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-inverse" data-bs-dismiss="modal">Annuler</button>

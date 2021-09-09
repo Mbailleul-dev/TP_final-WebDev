@@ -1,18 +1,18 @@
 <?php
 session_start();
 
-require_once "header.php";
-require_once "navbar.php";
+require_once "header1.php";
+
 ?>
 <div class="container">
     <div class="row mt-4">
         <div class="col offset-1">
-            <h2>Présentation</h2>
+            <h2 id="home">Présentation</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-9 offset-1">
-            <p>
+        <div class="col-9 introduction offset-1">
+            <p class="text">
                 Quand tu fais le calcul, ce n'est pas un simple sport car entre penser et dire, il y a un monde de différence et c'est une sensation réelle qui se produit si on veut ! C'est pour ça que j'ai fait des films avec des replicants.
 
                 Si je t'emmerde, tu me le dis, même si on frime comme on appelle ça en France... c'est un très, très gros travail car l'aboutissement de l'instinct, c'est l'amour ! C'est pour ça que j'ai fait des films avec des replicants.

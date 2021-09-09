@@ -4,8 +4,7 @@ session_start();
 require_once "../models/database.php";
 require_once "../models/etfModel.php";
 require_once "../controllers/etfController.php";
-require_once "../header.php";
-require_once "../navbar.php";
+require_once "../header2.php";
 ?>
 
 <section>
@@ -24,10 +23,12 @@ require_once "../navbar.php";
             </form>
         </div>
     </div>
+<div class="canvas"><canvas id="myChart"></canvas></div>
+    
 
 </section>
 
 
 <?php
-require_once "../footer.php";
+require_once "../footerETF.php";
 ?>

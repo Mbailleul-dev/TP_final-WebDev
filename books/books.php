@@ -5,8 +5,7 @@ require_once "../models/database.php";
 require_once "../models/bookModel.php";
 require_once "../controllers/bookController.php";
 
-require_once "../header.php";
-require_once "../navbar.php";
+require_once "../header2.php";
 ?>
 
 <?php
@@ -34,10 +33,12 @@ if (isset($_SESSION['id_userTypes']) && $_SESSION['id_userTypes'] == 1) { ?>
 <?php } ?>
 
 <section>
-    <div class="container mt-5">
-        <?php
-        foreach ($booksList as $book) { ?>
-            <div class="accordion accordion-flush">
+    <div class="container mt-5 d-flex">
+        <div class="row">
+
+            <?php
+            foreach ($booksList as $book) { ?>
+                <!-- <div class="accordion accordion-flush">
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                         <button class="accordion-button collapsed book" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $book->id ?>" aria-expanded="false" aria-controls="flush-<?= $book->id ?>">
@@ -51,10 +52,23 @@ if (isset($_SESSION['id_userTypes']) && $_SESSION['id_userTypes'] == 1) { ?>
                         </div>
                     </div>
                 </div>
+            </div> -->
+                <div class="col-md-4">
+                    <div class="card mt-5" style="width: 25rem;" id="<?= $book->ref ?>">
+                        <img src="../assets/img/couverture/default.jpg" class="card-img-top" alt="Photo du bouquin">
+                        <div class="card-body">
+                            <h5 class="card-title"><b><?= $book->title ?></b> écrit par <b><?= $book->author ?></b>.</h5>
+                            <p class="card-text">Paru le <?= $book->release ?></p>
+                            <p class="card-text text" style="overflow: auto;"><?= $book->resume ?></p>
+                            <a href="#" class="btn btn-style">Voir les commentaires</a>
+                        </div>
+                    </div>
+                </div>
             <?php
-        } ?>
-            </div>
+            } ?>
 
+
+        </div>
     </div>
 </section>
 

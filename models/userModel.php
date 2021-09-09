@@ -67,14 +67,14 @@ class user extends database
     // méthode de connexion de l'utilisateur
     public function userConnexion()
     {
-        $userConnects = $this->db->prepare('SELECT id, mail, id_userTypes FROM shd113_users
+        $userConnects = $this->db->prepare('SELECT id, mail, avatar, id_userTypes FROM shd113_users
         WHERE login = :login');
         $userConnects->bindValue(':login', $this->login, PDO::PARAM_STR);
         $userConnects->execute();
         $userConnectsResult = $userConnects->fetch(PDO::FETCH_OBJ);
         return $userConnectsResult;
     }
-
+    //méthode de mise à jour de l'utilisateur
     public function updateUser()
     {
         $user = $this->db->prepare('UPDATE shd113_users SET `login` = :updateLogin, `mail` = :updateMail, `avatar` = :avatar 
@@ -85,7 +85,7 @@ class user extends database
         $user->bindValue(':avatar', $this->avatar, PDO::PARAM_STR);
         return $user->execute();
     }
-
+    //méthode de suppression d'un utilisateur
     public function deleteUser()
     {
         $deleteUser = $this->db->prepare('DELETE FROM shd113_users 

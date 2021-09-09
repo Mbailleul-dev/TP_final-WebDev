@@ -39,9 +39,8 @@ if (count($_POST) > 0) {
       $_SESSION['id'] = $connectUser->id;
       $_SESSION['login'] = $user->login;
       $_SESSION['mail'] = $connectUser->mail;
-      $_SESSION['avatar'] = $user->avatar;
+      $_SESSION['avatar'] = $connectUser->avatar;
       $_SESSION['id_userTypes'] = $connectUser->id_userTypes;
-      
       header('location:profil.php');
       exit;
    }

@@ -1,29 +1,78 @@
-$bg-color:#344a62;
+$bg-color:rgba(black, 40%);
+$bg-color2: rgba(blue, 30%);
+$bg-color3: rgba(0, 0, 128, 85%);
 $color1:white;
 $color2:#344a62;
-$hover-color: orangered;
+$hover-color: rgb(118, 233, 237);
 $alert: rgb(161, 15, 15);
 body {
     margin: 0;
     padding: 0;
-    font-family: "Xanh Mono", monospace;
+    font-family: 'Kaisei Decol', serif;
+    background-image: url('../img/F7.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $color1;
 }
 
-header,
+.header1 {
+    min-height: 98vh;
+}
+
 footer {
     height: 20vh;
     background-color: $bg-color;
 }
 
-h1 {
+.title1 {
     text-transform: uppercase;
     font-weight: bold;
     color: $color1;
+    font-size: 4.1rem;
+}
+
+.title2 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $color1;
+    font-size: 2rem;
+}
+
+.title-size {
+    min-height: 50vh;
+    margin-top: 30vh;
+}
+
+.bi-arrow-down {
+    color: $color1;
+    border: 2px solid $color1;
+    border-radius: 20%;
+    font-size: 2rem;
+    transition: font-size 0.3s linear;
+    &:hover {
+        color: $hover-color;
+        border: 3px solid $hover-color;
+        font-size: 2rem;
+    }
+}
+
+.introduction {
+    min-height: 60vh;
+    color: $color1;
+    background-color: $bg-color;
 }
 
 h2 {
-    color: $color2;
-    text-decoration: underline;
+    color: $color1;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+p,
+.btn {
+    font-size: 1.2rem;
 }
 
 a {
@@ -38,20 +87,25 @@ ul {
     list-style-type: none;
 }
 
-u {
-    color: $color1;
+.navbar1 {
+    margin-left: 45vw;
+}
+
+.toggler1 {
+    margin-left: 35vw;
 }
 
 nav,
 .nav-item {
-    background-color: $bg-color;
     display: flex;
     a {
         color: $color1;
         text-decoration: none;
         font-size: 1.5rem;
-        &:hover {
+        &:hover,
+         :focus {
             color: $hover-color;
+            border-bottom: 1px solid $hover-color;
         }
     }
 }
@@ -59,7 +113,7 @@ nav,
 .btn-search {
     border: 1px solid $color1;
     color: $color1;
-    background-color: $bg-color;
+    background-color: $bg-color2;
     &:hover {
         color: $hover-color;
         border: 1px solid $hover-color;
@@ -80,13 +134,55 @@ nav,
     color: $color1;
 }
 
+.footer-link {
+    font-size: 1.4rem;
+}
+
+.connexion,
+.inscription {
+    min-height: 55vh;
+}
+
+.profil {
+    min-height: 47vh;
+    margin-top: 15vh;
+}
+
+.btn-size {
+    min-width: 10vw;
+}
+
+label {
+    background-color: $bg-color;
+}
+
+.modal-content,
+.accordion-header,
+.accordion-body,
+.accordion-button {
+    background-color: $bg-color;
+    color: $color1;
+}
+
+.form-group,
+.btn {
+    margin-top: 1.5vh;
+}
+
+.card-body {
+    color: black;
+}
+
 .bi {
     color: $color1;
 }
 
-.link,
-legend u {
-    color: $color2;
+legend {
+    font-size: 2rem;
+}
+
+label {
+    font-size: 1.5rem;
 }
 
 .name {
@@ -133,4 +229,22 @@ h4 {
 #bookResume,
 #newBookResume {
     min-width: 60vw;
+}
+
+.comments {
+    border: 2px solid black;
+}
+
+.btn-style {
+    background-color: $bg-color3;
+    color: $color1;
+    &:hover {
+        color: $hover-color;
+        border: 3px 3px 3px $hover-color;
+    }
+}
+
+.canvas {
+    width: 50vw;
+    height: 50vh;
 }

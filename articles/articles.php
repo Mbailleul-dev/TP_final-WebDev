@@ -3,13 +3,13 @@ session_start();
 
 require_once "../models/database.php";
 require_once "../models/articleModel.php";
+require_once "../models/articleCommentModel.php";
 require_once "../controllers/articleController.php";
 
-require_once "../header.php";
-require_once "../navbar.php";
+require_once "../header2.php";
 ?>
 
-<section>
+<section class="mt-5">
     <div class="container">
         <div class="row">
             <div class="col-md-7">
@@ -43,30 +43,43 @@ require_once "../navbar.php";
             </div>
         </div>
 
-        <div class="row">
-        <?php
-        foreach ($articlesList as $article) { ?>
+        <div class="row mt-5">
+            <?php
+            foreach ($articleShow as $key => $article) { ?>
 
-            <div class="accordion accordion-flush">
-                <div class="accordion-item" >
-                    <h2 class="accordion-header d-flex" id="flush-headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $article->ref ?>" aria-expanded="false" aria-controls="flush-<?= $article->ref ?>">
-                            <?= $article->title ?>
-                        </button>
-                    </h2>
-                    <div id="flush-<?= $article->ref ?>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <p>Ecrit le <?= $article->release ?> par <b><?= $article->login ?></b></p>
-                            <p class="text" id="article-<?=$article->ref ?>" article-title="<?= $article->title ?>"><?= $article->text ?></p>
+                <div class="row text-center">
+                    <div class="col">
+                    <a class="btn btn-search btn-size" data-bs-toggle="collapse" href="#firstCollapse<?= $key ?>" role="button" aria-expanded="false" aria-controls="firstCollapse<?= $key ?>"><?= $article['article']['titleArticle'] ?></a>
+                        <div class="collapse multi-collapse" id="firstCollapse<?= $key ?>">
+                            <div class="card card-body">
+                                <p>Ecrit le <?= $article['article']['releaseArticle'] ?> par <b><?= $article['article']['authorLogin'] ?></b></p>
+                                <p class="text" id="article-<?= $key ?>" article-title="<?= $article['article']['titleArticle'] ?>"><?= $article['article']['textArticle'] ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                    <button id="btnComment" class="btn btn-search btn-size" type="button" data-bs-toggle="collapse" data-bs-target="#secondCollapse<?= $key ?>" aria-expanded="false" aria-controls="secondCollapse<?= $key ?>">Voir les commentaires</button>
+                        <div class="collapse multi-collapse" id="secondCollapse<?= $key ?>">
+                            <div class="card card-body">
+                                <?php
+                                foreach($article['comment'] as $comment)
+                                { 
+                                    if (isset($comment['releaseComment']) && isset($comment['commentLogin']))
+                                    { ?>
+                                    <p>ecrit par <b><?= $comment['commentLogin']  ?></b> le <b><?= $comment['releaseComment'] ?></b></p>
+                                    <p><?= $comment['textComment'] ?></p>
+                                    <?php  } else { ?> <p>Pas encore de commentaire.</p>
+                                <?php } }
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <?php
-        } ?>
+            <?php
+            } ?>
         </div>
     </div>
 </section>
 <?php
-require_once "../footer.php";
+require_once "../footerArticle.php";
 ?>
