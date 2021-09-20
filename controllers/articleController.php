@@ -4,6 +4,7 @@ $article = new article();
 $articleComment = new articleComment();
 $error = null;
 
+//ajout des articles
 if (!empty($_POST['title']) && !empty($_POST['text'])) {
 
     $article->title = $_POST['title'];
@@ -17,7 +18,7 @@ if (!empty($_POST['title']) && !empty($_POST['text'])) {
     $error = "Toutes les valeurs ne sont pas renseignées";
 }
 
-
+//modification des articles
 if (!empty($_POST['ModalLabel']) && !empty($_POST['ModalBody'])) {
     $article->id = $_POST['newId'];
     $article->title = $_POST['ModalLabel'];
@@ -28,13 +29,23 @@ if (!empty($_POST['ModalLabel']) && !empty($_POST['ModalBody'])) {
     $error = "Toutes les valeurs ne sont pas renseignées";
 }
 
+//suppression d'un article
 if(!empty($_POST['deleteSelect']))
 {
-    $article->title= $_POST['deleteSelect'];
+    $article->id= $_POST['deleteSelect'];
     $deleteArticle = $article->deleteArticle();
 }
 
+//ajouter des commentaires
+if(!empty($_POST['newComment'])){
+    $articleComment->text = $_POST['newComment'];
+    $articleComment->release = date('Y-m-d H:i:s');
+    $articleComment->id_article = $_POST['id_article'];
+    $articleComment->id_user = $_SESSION['id'];
+    $articleComment->addArticleComment();
+}
 
+//liste des articles avec les commentaires
 $articlesWithComments = $article->getArticlesWithComments();
 
 foreach ($articlesWithComments as $key => $article) {
@@ -50,7 +61,3 @@ foreach ($articlesWithComments as $key => $article) {
     $articleShow[$article->idArticle]['comment'][$article->idComment]['commentLogin'] = $article->commentLogin;
 }
 
-//var_dump($articleShow);
-
-
-//$articlesComments = $articleComment->getArticleComments();

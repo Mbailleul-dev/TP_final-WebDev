@@ -3,7 +3,7 @@ session_start();
 
 require_once "../models/database.php";
 require_once "../models/topicModel.php";
-require_once "../controllers/forumController.php";
+require_once "../controllers/topicController.php";
 
 require_once "../header2.php";
 ?>
@@ -64,19 +64,15 @@ require_once "../header2.php";
         </div>
 
         <div class="col-md-9">
-            <?php foreach ($topicsList as $topic) { ?>
                 <div class="row text-center">
                     <div class="col">
-                        <div class="bg-topic border rounded mt-2 d-grid">
-                            <a class="btn m-0" role="button" href="http://localhost/DMGP/forum/topic.php?id=<?= $topic->id ?>">
-                                <?= $topic->title ?>
-                            </a>
-                        </div>
+                        <p class="text-white"><?= $topic->text ?></p>
                     </div>
                 </div>
-            <?php } ?>
+                <div class="row">
+                    <button>Ajouter un commentaire</button>
+                </div>
         </div>
-
     </div>
 </div>
 

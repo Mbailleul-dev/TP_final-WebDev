@@ -3,7 +3,7 @@
 class etf extends database
 {
     protected $db = null;
-    public $id = 0; //on initialise les valeurs pour le patient
+    public $id = 0; 
     public $investor = ' ';
     public $name = ' ';
     public $ticker = ' ';

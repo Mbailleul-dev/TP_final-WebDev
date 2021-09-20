@@ -38,36 +38,33 @@ if (isset($_SESSION['id_userTypes']) && $_SESSION['id_userTypes'] == 1) { ?>
 
             <?php
             foreach ($booksList as $book) { ?>
-                <!-- <div class="accordion accordion-flush">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                        <button class="accordion-button collapsed book" type="button" data-bs-toggle="collapse" data-bs-target="#flush-<?= $book->id ?>" aria-expanded="false" aria-controls="flush-<?= $book->id ?>">
-                            <p><b><?= $book->title ?></b> écrit par <b><?= $book->author ?></b>.</p>
-                        </button>
-                    </h2>
-                    <div id="flush-<?= $book->id ?>" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body">
-                            <p>Publié en <?= $book->release ?>. </p>
-                            <p class="text" id="book-<?= $book->ref ?>" book-title="<?= $book->title ?>"><?= $book->resume ?></p>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
                 <div class="col-md-4">
                     <div class="card mt-5" style="width: 25rem;" id="<?= $book->ref ?>">
-                        <img src="../assets/img/couverture/default.jpg" class="card-img-top" alt="Photo du bouquin">
                         <div class="card-body">
                             <h5 class="card-title"><b><?= $book->title ?></b> écrit par <b><?= $book->author ?></b>.</h5>
                             <p class="card-text">Paru le <?= $book->release ?></p>
-                            <p class="card-text text" style="overflow: auto;"><?= $book->resume ?></p>
-                            <a href="#" class="btn btn-style">Voir les commentaires</a>
+                            <p class="card-text text" style="overflow: auto;">
+                                <img src="../assets/img/couverture/default.jpg" class="cardImg me-2" alt="Photo du bouquin">
+                                <?= $book->resume ?>
+                            </p>
+                            <!-- <a class="btn btn-size btn-style" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                                Voir les commentaires.
+                            </a> -->
+                        </div>
+                    </div>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+                        <div class="offcanvas-header">
+                        </div>
+                        <div class="offcanvas-body">
+                            <div>
+                                <p class="black">Premier commentaire.</p>
+                            </div>
+                            <button type="button" class="btn-style btn text-reset" data-bs-dismiss="offcanvas">Fermer</button>
                         </div>
                     </div>
                 </div>
             <?php
             } ?>
-
-
         </div>
     </div>
 </section>

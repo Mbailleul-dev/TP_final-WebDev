@@ -3,8 +3,8 @@
         <label for="deleteSelect">Supprimer un article:</label>
         <select class="form-control" name="deleteSelect" id="deleteSelect">
             <?php
-            foreach ($articlesList as $article) { ?>
-                <option value="<?= $article->title ?>"><?= $article->title ?></option>
+            foreach ($articleShow as $key => $article) { ?>
+                <option value="<?= $key ?>"><?= $article['article']['titleArticle'] ?></option>
             <?php } ?>
         </select>
         <!-- Button trigger modal -->

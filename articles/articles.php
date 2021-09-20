@@ -46,10 +46,9 @@ require_once "../header2.php";
         <div class="row mt-5">
             <?php
             foreach ($articleShow as $key => $article) { ?>
-
                 <div class="row text-center">
                     <div class="col">
-                    <a class="btn btn-search btn-size" data-bs-toggle="collapse" href="#firstCollapse<?= $key ?>" role="button" aria-expanded="false" aria-controls="firstCollapse<?= $key ?>"><?= $article['article']['titleArticle'] ?></a>
+                        <a class="btn btn-search btn-size" data-bs-toggle="collapse" href="#firstCollapse<?= $key ?>" role="button" aria-expanded="false" aria-controls="firstCollapse<?= $key ?>"><?= $article['article']['titleArticle'] ?></a>
                         <div class="collapse multi-collapse" id="firstCollapse<?= $key ?>">
                             <div class="card card-body">
                                 <p>Ecrit le <?= $article['article']['releaseArticle'] ?> par <b><?= $article['article']['authorLogin'] ?></b></p>
@@ -58,18 +57,26 @@ require_once "../header2.php";
                         </div>
                     </div>
                     <div class="col">
-                    <button id="btnComment" class="btn btn-search btn-size" type="button" data-bs-toggle="collapse" data-bs-target="#secondCollapse<?= $key ?>" aria-expanded="false" aria-controls="secondCollapse<?= $key ?>">Voir les commentaires</button>
+                        <button id="btnComment" class="btn btn-search btn-size" type="button" data-bs-toggle="collapse" data-bs-target="#secondCollapse<?= $key ?>" aria-expanded="false" aria-controls="secondCollapse<?= $key ?>">Voir les commentaires</button>
                         <div class="collapse multi-collapse" id="secondCollapse<?= $key ?>">
                             <div class="card card-body">
-                                <?php
-                                foreach($article['comment'] as $comment)
-                                { 
-                                    if (isset($comment['releaseComment']) && isset($comment['commentLogin']))
-                                    { ?>
-                                    <p>ecrit par <b><?= $comment['commentLogin']  ?></b> le <b><?= $comment['releaseComment'] ?></b></p>
-                                    <p><?= $comment['textComment'] ?></p>
+                                <?php if (!empty($_SESSION['login'])) { ?>
+                                    <form action="#" method="POST">
+                                        <input type="hidden" name="id_article" value="<?= $key ?>">
+                                        <label for="newComment" class="hidden"></label>
+                                        <textarea class="form-group mb-1" id="newComment" name="newComment" rows="2" cols="50" style="float:left;" placeholder="Ajouter un nouveau commentaire."></textarea>
+                                        <button type="submit" class="btn btn-style">Envoyez</button>
+                                    </form>
+                                    <?php }
+                                foreach ($article['comment'] as $comment) {
+                                    if (isset($comment['releaseComment']) && isset($comment['commentLogin'])) { ?>
+                                        <div class="border">
+                                            <p><u>ecrit par <b><?= $comment['commentLogin']  ?></b> le <b><?= $comment['releaseComment'] ?></b></u></p>
+                                            <p><?= $comment['textComment'] ?></p>
+                                        </div>
                                     <?php  } else { ?> <p>Pas encore de commentaire.</p>
-                                <?php } }
+                                <?php }
+                                }
                                 ?>
                             </div>
                         </div>
@@ -79,7 +86,7 @@ require_once "../header2.php";
             } ?>
         </div>
     </div>
-</section>
+</section> 
 <?php
 require_once "../footerArticle.php";
 ?>

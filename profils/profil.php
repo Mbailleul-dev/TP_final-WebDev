@@ -5,13 +5,8 @@ require_once "../models/database.php";
 require_once "../pages/config.php";
 require_once "../models/userModel.php";
 require_once "../controllers/profilController.php";
-if ($_SESSION['login']) {
-    setcookie('login', $_SESSION['login'], time() + 365 * 24 * 3600, null, null, false, true);
-}
 require_once "../header2.php";
-
 ?>
-
 
 <div class="container profil">
     <div class="row">

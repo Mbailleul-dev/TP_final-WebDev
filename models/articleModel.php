@@ -52,8 +52,8 @@ class article extends database
     public function deleteArticle()
     {
         $deleteArticle = $this->db->prepare('DELETE FROM shd113_articles
-        WHERE `title`=:deleteSelect');
-        $deleteArticle->bindValue(':deleteSelect', $this->title, PDO::PARAM_STR);
+        WHERE `id`= :deleteSelect');
+        $deleteArticle->bindValue(':deleteSelect', $this->id, PDO::PARAM_INT);
         return $deleteArticle->execute();
     }
 
@@ -68,7 +68,7 @@ class article extends database
        LEFT JOIN shd113_articlescomments ON shd113_articles.id = shd113_articlescomments.id_article
        LEFT JOIN shd113_users as commentUser ON commentUser.id = shd113_articlescomments.id_user
        LEFT JOIN shd113_users as authorUser ON authorUser.id = shd113_articles.id_users
-       ORDER BY shd113_articles.release DESC';
+       ORDER BY shd113_articles.release DESC, shd113_articlescomments.release';
         $getListExecute = $this->db->query($getList);
         $getListResult = $getListExecute->fetchAll(PDO::FETCH_OBJ); //fetchAll est une methode de l'objet "queryExecute"
         return $getListResult;

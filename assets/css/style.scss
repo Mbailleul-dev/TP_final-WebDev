@@ -192,7 +192,7 @@ label {
 }
 
 .text {
-    text-indent: 2rem;
+    text-indent: 3rem;
 }
 
 .searchform {
@@ -245,6 +245,25 @@ h4 {
 }
 
 .canvas {
-    width: 50vw;
-    height: 50vh;
+    width: 87vw;
+    height: 88vh;
+}
+
+.cardImg {
+    float: left;
+    max-height: 15rem;
+    max-width: auto;
+}
+
+.black {
+    color: black;
+}
+
+.bg-topic {
+    background-color: rgb(253, 240, 221);
+    color: black;
+}
+
+.topic {
+    min-height: 70vh;
 }

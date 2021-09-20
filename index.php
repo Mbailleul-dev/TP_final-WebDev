@@ -12,16 +12,28 @@ require_once "header1.php";
     </div>
     <div class="row">
         <div class="col-9 introduction offset-1">
+            <p>
+                Bonjour à tous !
+            </p>
             <p class="text">
-                Quand tu fais le calcul, ce n'est pas un simple sport car entre penser et dire, il y a un monde de différence et c'est une sensation réelle qui se produit si on veut ! C'est pour ça que j'ai fait des films avec des replicants.
-
-                Si je t'emmerde, tu me le dis, même si on frime comme on appelle ça en France... c'est un très, très gros travail car l'aboutissement de l'instinct, c'est l'amour ! C'est pour ça que j'ai fait des films avec des replicants.
-
-                Je me souviens en fait, là on voit qu'on a beaucoup à travailler sur nous-mêmes car entre penser et dire, il y a un monde de différence et parfois c'est bon parfois c'est pas bon. Et là, vraiment, j'essaie de tout coeur de donner la plus belle réponse de la terre !
-
-                Ah non attention, même si on frime comme on appelle ça en France... il faut se recréer... pour recréer... a better you et cette officialité peut vraiment retarder ce qui devrait devenir... C'est pour ça que j'ai fait des films avec des replicants.
-
-                Ça sounds good, tu vois au passage qu'il n'y a rien de concret car on vit dans une réalité qu'on a créée et que j'appelle illusion puisque the final conclusion of the spirit is perfection Pour te dire comme on a beaucoup à apprendre sur la vie !
+                Si vous êtes ici, c'est que vous cherchez un moyen d'atteindre la liberté financière.
+                Mais la liberté fiancière c'est quoi ?</p>
+            <p class="text">Et bien c'est la liberté de faire ce que l'on souhaite sans réfléchir à combien ça coûte.
+                C'est avoir du temps pour soi, pour les autres -famille, amis, association- sans être obligé
+                de travailler pour un patron. </p>
+            <p class="text">La liberté finançière ce n'est pas non plus l'oisiveté, mais mettre à profit son temps et
+                son argent pour soi. De plus en plus de personnes prennent leur retraite avant leur 40 ans
+                à travers le monde, pour certains plus jeunes encore: se sont les early-retirements. Pour
+                autant ils continuent de travailler, pour eux, et en faisant ce qu'ils aiment. Il faut qu'en
+                même s'occupper pendant la retraite !</p>
+            <p class="text">Vous l'avez compris l'objectif principal, c'est d'avoir suffisament d'argent pour ne plus
+                dépendre d'un salaire. Et pour cela, une solution: faire travailler l'argent pour soi !<br>
+                Vous découvrirez ici comment épargner -mieux- votre argent, et comment l'investir
+                intelligement pour qu'il fructifie et vous dégage un revenu.
+            </p><br>
+            <p>
+                Je vous invite à <a href="http://localhost/DMGP/profils/inscription.php"><u><em>rejoindre notre communauté</em></u></a>,
+                et à visiter notre <a href="http://localhost/DMGP/articles/articles.php"><u><em>section articles</em></u></a>. Bonne balade !
             </p>
         </div>
     </div>
